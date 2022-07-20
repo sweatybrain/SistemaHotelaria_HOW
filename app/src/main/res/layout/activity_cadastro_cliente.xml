@@ -8,6 +8,7 @@
     tools:context=".CadastroCliente">
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_nome_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome"
@@ -15,6 +16,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_cpf_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="CPF"
@@ -22,6 +24,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_datNascimento_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Data de Nascimento"
@@ -29,15 +32,50 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_telefone_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Telefone"
         android:textColorHint="#bbb"/>
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_nacionalidade_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nacionalidade"
-        android:textColorHint="#bbb"
-        />
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_cep_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CEP"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_logradouro_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="logradouro"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_numero_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_complemento_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Complemento (opcional)"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_salvar_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SALVAR"/>
 </LinearLayout>

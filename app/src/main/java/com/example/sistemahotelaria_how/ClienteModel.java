@@ -6,11 +6,20 @@ public class ClienteModel {
     private String cpf;
     private String dataNascimento;
     private String email;
+    private String telefone;
     private String endereco;
     private String profissao;
     private String rg;
     private String nacionalidade;
 
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
     public int getId() {
         return id;
