@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     public DataBaseHelper(Context context){
@@ -135,7 +137,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
-/*
     public void GetAllClientes(Context context, ListView lv){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"_id","nome","CPF"};
@@ -146,11 +147,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //"nacionalidade"
         //};
         Cursor data = db.query(TABELA_CLIENTE,columns,null,null,null,null,"nome");
-        int[] to = {R.id.textViewIdListarCliente,R.id.textViewNomeListarCliente,R.id.textViewCpfListarCliente};
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.cliente_item_list_view,data,columns,to,0);
+        int[] to = {R.id.txtIdListarCliente,R.id.txtNomeListarCliente,R.id.txtCpfListarCliente};
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_pessoa_item,data,columns,to,0);
         lv.setAdapter(adapter);
         db.close();
-    }*/
+    }
 
 /*    public void GetAllFuncionarios(Context context, ListView lv){
         SQLiteDatabase db = this.getReadableDatabase();

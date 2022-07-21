@@ -33,7 +33,8 @@ public class Hospedes extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void AbrirTelaConsultaHospede(){
-
+        Intent in = new Intent(this, ConsultaCliente.class);
+        startActivity(in);
     }
     private void AbrirTelaCadastraHospede(){
         Intent in = new Intent(this, CadastroCliente.class);

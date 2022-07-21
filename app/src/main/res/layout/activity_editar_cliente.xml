@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditarCliente">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_nome_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:textColorHint="#bbb"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_cpf_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF"
+        android:textColorHint="#bbb"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_datNascimento_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data de Nascimento"
+        android:textColorHint="#bbb"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_telefone_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefone"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_nacionalidade_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nacionalidade"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_cep_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CEP"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_logradouro_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="logradouro"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_numero_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número"
+        android:textColorHint="#bbb"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/txt_complemento_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Complemento (opcional)"
+        android:textColorHint="#bbb"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_excluir_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:text="EXCLUIR"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_salvar_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:text="SALVAR"/>
+
+    </LinearLayout>
+
+</LinearLayout>
