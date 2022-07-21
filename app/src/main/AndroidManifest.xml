@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SistemaHotelaria_HOW">
         <activity
+            android:name=".EditarFuncionario"
+            android:exported="false" />
+        <activity
+            android:name=".Funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".ConsultaFuncionario"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroFuncionario"
+            android:exported="false" />
+        <activity
             android:name=".EditarCliente"
             android:exported="false" />
         <activity

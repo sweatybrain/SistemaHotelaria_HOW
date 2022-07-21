@@ -33,6 +33,9 @@ public class EditarCliente extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         int pID = b.getInt("id");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         DataBaseHelper dbContext = new DataBaseHelper(this);
         ClienteEdicao = dbContext.GetByIdCliente(pID);
 
@@ -80,7 +83,7 @@ public class EditarCliente extends AppCompatActivity {
                 oCliente.setEndereco(txtLogradouro.getText().toString());
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
-                dbContext.createCliente(oCliente);
+                dbContext.updateCliente(oCliente);
                 onSupportNavigateUp();
             }
         });
@@ -91,7 +94,14 @@ public class EditarCliente extends AppCompatActivity {
                 DataBaseHelper databaseHelper = new DataBaseHelper(getApplication());
                 databaseHelper.deleteCliente(ClienteEdicao);
                 Toast.makeText(getApplication(), "Cliente excluído", Toast.LENGTH_LONG).show();
+                onSupportNavigateUp();
             }
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

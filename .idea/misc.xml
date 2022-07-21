@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_cadastro_cliente.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_cadastro_cliente.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_cadastro_funcionario.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_consulta_cliente.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_editar_cliente.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_consulta_funcionario.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_editar_cliente.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_editar_funcionario.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_funcionario.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_hospedes.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SistemaHotelaria_HOW/app/src/main/res/layout/consulta_pessoa_item.xml" value="0.20416666666666666" />
