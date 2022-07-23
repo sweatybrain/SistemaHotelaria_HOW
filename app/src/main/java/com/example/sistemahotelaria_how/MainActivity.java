@@ -35,15 +35,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAgenda.setOnClickListener(this);
         btnReserva.setOnClickListener(this);
     }
+
+    //aqui a principio ta ok
     private void AbrirTelaHospedes(){
         Intent in = new Intent(this, Hospedes.class);
         startActivity(in);
     }
 
+    //aqui a principio ta ok
     private void AbrirTelaOperacional(){
         Intent in = new Intent(this, Funcionario.class);
         startActivity(in);
     }
+
     //TO-DO: IMPLEMENTAR DAQUI PRA FRENTE
     private void AbrirTelaReservas(){
         Intent in = new Intent(this, Hospedes.class);

@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SistemaHotelaria_HOW">
         <activity
+            android:name=".ConsultaReservas"
+            android:exported="false" />
+        <activity
+            android:name=".EditarReservas"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroReservas"
+            android:exported="false" />
+        <activity
+            android:name=".Reservas"
+            android:exported="false" />
+        <activity
             android:name=".EditarFuncionario"
             android:exported="false" />
         <activity

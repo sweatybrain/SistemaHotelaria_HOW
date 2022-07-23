@@ -198,4 +198,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
         return oFuncionario;
     }
+
+    public long deleteReserva(ReservaModel pReserva){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        long id = db.delete(TABELA_FUNCIONARIO,"_id = ?", new String[]{String.valueOf(pReserva.getId())});
+        db.close();
+
+        return id;
+    }
+
 }
