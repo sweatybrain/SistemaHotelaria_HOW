@@ -47,7 +47,7 @@ public class CadastroReservas extends AppCompatActivity {
                 oReserva.setNomeHospede(txtDatReserva.getText().toString());
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
-                dbContext.updateReserva(oReserva);
+                dbContext.createReserva(oReserva);
                 onSupportNavigateUp();
             }
         });

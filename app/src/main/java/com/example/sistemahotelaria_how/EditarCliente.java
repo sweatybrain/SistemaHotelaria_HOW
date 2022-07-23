@@ -47,13 +47,13 @@ public class EditarCliente extends AppCompatActivity {
     private void InicializarComponentes(){
         txtNome = findViewById(R.id.txt_nome_cliente);
         txtCpf = findViewById(R.id.txt_cpf_cliente);
-        txtDatNascimento = findViewById(R.id.txt_datNascimento_cliente);
+/*        txtDatNascimento = findViewById(R.id.txt_datNascimento_cliente);
         txtTelefone = findViewById(R.id.txt_telefone_cliente);
         txtNacionalidade = findViewById(R.id.txt_nacionalidade_cliente);
         txtLogradouro = findViewById(R.id.txt_logradouro_cliente);
         txtCep = findViewById(R.id.txt_cep_cliente);
         txtComplemento = findViewById(R.id.txt_complemento_cliente);
-        txtNumero = findViewById(R.id.txt_numero_cliente);
+        txtNumero = findViewById(R.id.txt_numero_cliente);*/
         btnSalvarCliente = findViewById(R.id.btn_salvar_cliente);
         btnExcluirCliente = findViewById(R.id.btn_excluir_cliente);
     }
@@ -61,13 +61,13 @@ public class EditarCliente extends AppCompatActivity {
     private void SetarCampos(){
         txtNome.setText(ClienteEdicao.getNome());
         txtCpf.setText(ClienteEdicao.getCpf());
-        txtDatNascimento.setText(ClienteEdicao.getDataNascimento());
+/*        txtDatNascimento.setText(ClienteEdicao.getDataNascimento());
         txtTelefone.setText(ClienteEdicao.getTelefone());
         txtNacionalidade.setText(ClienteEdicao.getNacionalidade());
         txtLogradouro.setText(ClienteEdicao.getEndereco());
         txtCep.setText(ClienteEdicao.getCep());
         txtComplemento.setText(ClienteEdicao.getComplemento());
-        txtNumero.setText(ClienteEdicao.getNumero());
+        txtNumero.setText(ClienteEdicao.getNumero());*/
     }
 
     private void SetarListeners(){
@@ -77,13 +77,13 @@ public class EditarCliente extends AppCompatActivity {
                 ClienteModel oCliente = new ClienteModel();
                 oCliente.setNome(txtNome.getText().toString());
                 oCliente.setCpf(txtCpf.getText().toString());
-                oCliente.setDataNascimento(txtDatNascimento.getText().toString());
+/*                oCliente.setDataNascimento(txtDatNascimento.getText().toString());
                 oCliente.setTelefone(txtTelefone.getText().toString());
                 oCliente.setNacionalidade(txtNacionalidade.getText().toString());
                 oCliente.setEndereco(txtLogradouro.getText().toString());
                 oCliente.setEndereco(txtCep.getText().toString());
                 oCliente.setEndereco(txtComplemento.getText().toString());
-                oCliente.setEndereco(txtNumero.getText().toString());
+                oCliente.setEndereco(txtNumero.getText().toString());*/
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
                 dbContext.updateCliente(oCliente);

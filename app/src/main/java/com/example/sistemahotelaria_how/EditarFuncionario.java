@@ -46,13 +46,13 @@ public class EditarFuncionario extends AppCompatActivity {
     private void InicializarComponentes(){
         txtNome = findViewById(R.id.txt_nome_cliente);
         txtCpf = findViewById(R.id.txt_cpf_cliente);
-        txtDatNascimento = findViewById(R.id.txt_datNascimento_cliente);
+/*        txtDatNascimento = findViewById(R.id.txt_datNascimento_cliente);
         txtTelefone = findViewById(R.id.txt_telefone_cliente);
         txtNacionalidade = findViewById(R.id.txt_nacionalidade_cliente);
         txtLogradouro = findViewById(R.id.txt_logradouro_cliente);
         txtCep = findViewById(R.id.txt_cep_cliente);
         txtComplemento = findViewById(R.id.txt_complemento_cliente);
-        txtNumero = findViewById(R.id.txt_numero_cliente);
+        txtNumero = findViewById(R.id.txt_numero_cliente);*/
         btnSalvarCliente = findViewById(R.id.btn_salvar_cliente);
         btnExcluirCliente = findViewById(R.id.btn_excluir_cliente);
     }
@@ -60,13 +60,13 @@ public class EditarFuncionario extends AppCompatActivity {
     private void SetarCampos(){
         txtNome.setText(FuncionaroEdicao.getNome());
         txtCpf.setText(FuncionaroEdicao.getCpf());
-        txtDatNascimento.setText(FuncionaroEdicao.getDataNascimento());
+/*        txtDatNascimento.setText(FuncionaroEdicao.getDataNascimento());
         txtTelefone.setText(FuncionaroEdicao.getTelefone());
         txtNacionalidade.setText(FuncionaroEdicao.getNacionalidade());
         txtLogradouro.setText(FuncionaroEdicao.getEndereco());
         txtCep.setText(FuncionaroEdicao.getCep());
         txtComplemento.setText(FuncionaroEdicao.getComplemento());
-        txtNumero.setText(FuncionaroEdicao.getNumero());
+        txtNumero.setText(FuncionaroEdicao.getNumero());*/
     }
 
     private void SetarListeners(){
@@ -76,13 +76,13 @@ public class EditarFuncionario extends AppCompatActivity {
                 FuncionarioModel oFuncionario = new FuncionarioModel();
                 oFuncionario.setNome(txtNome.getText().toString());
                 oFuncionario.setCpf(txtCpf.getText().toString());
-                oFuncionario.setDataNascimento(txtDatNascimento.getText().toString());
+/*                oFuncionario.setDataNascimento(txtDatNascimento.getText().toString());
                 oFuncionario.setTelefone(txtTelefone.getText().toString());
                 oFuncionario.setNacionalidade(txtNacionalidade.getText().toString());
                 oFuncionario.setEndereco(txtLogradouro.getText().toString());
                 oFuncionario.setEndereco(txtCep.getText().toString());
                 oFuncionario.setEndereco(txtComplemento.getText().toString());
-                oFuncionario.setEndereco(txtNumero.getText().toString());
+                oFuncionario.setEndereco(txtNumero.getText().toString());*/
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
                 dbContext.updateFuncionario(oFuncionario);

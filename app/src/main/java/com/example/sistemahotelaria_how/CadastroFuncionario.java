@@ -37,13 +37,13 @@ public class CadastroFuncionario extends AppCompatActivity {
     private void InicializarComponentes(){
         txtNome = findViewById(R.id.txt_nome_funcionario);
         txtCpf = findViewById(R.id.txt_cpf_funcionario);
-        txtDatNascimento = findViewById(R.id.txt_datNascimento_funcionario);
+/*        txtDatNascimento = findViewById(R.id.txt_datNascimento_funcionario);
         txtTelefone = findViewById(R.id.txt_telefone_funcionario);
         txtNacionalidade = findViewById(R.id.txt_nacionalidade_funcionario);
         txtLogradouro = findViewById(R.id.txt_logradouro_funcionario);
         txtCep = findViewById(R.id.txt_cep_funcionario);
         txtComplemento = findViewById(R.id.txt_complemento_funcionario);
-        txtNumero = findViewById(R.id.txt_numero_funcionario);
+        txtNumero = findViewById(R.id.txt_numero_funcionario);*/
         btnSalvarFuncionario = findViewById(R.id.btn_salvar_funcionario);
     }
 
@@ -55,6 +55,7 @@ public class CadastroFuncionario extends AppCompatActivity {
                 FuncionarioModel oFuncionario = new FuncionarioModel();
                 oFuncionario.setNome(txtNome.getText().toString());
                 oFuncionario.setCpf(txtCpf.getText().toString());
+/*
                 oFuncionario.setDataNascimento(txtDatNascimento.getText().toString());
                 oFuncionario.setTelefone(txtTelefone.getText().toString());
                 oFuncionario.setNacionalidade(txtNacionalidade.getText().toString());
@@ -62,6 +63,7 @@ public class CadastroFuncionario extends AppCompatActivity {
                 oFuncionario.setEndereco(txtCep.getText().toString());
                 oFuncionario.setEndereco(txtComplemento.getText().toString());
                 oFuncionario.setEndereco(txtNumero.getText().toString());
+*/
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
                 dbContext.createFuncionario(oFuncionario);

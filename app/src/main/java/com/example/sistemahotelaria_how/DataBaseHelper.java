@@ -51,6 +51,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_CLIENTE);
         sqLiteDatabase.execSQL(CREATE_TABLE_FUNCIONARIO);
+        sqLiteDatabase.execSQL(CREATE_TABLE_RESERVA);
 
     }
 
@@ -64,11 +65,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("nome", pCliente.getNome());
         cv.put("CPF", pCliente.getCpf());
-        cv.put("data_nascimento", pCliente.getDataNascimento());
+/*        cv.put("data_nascimento", pCliente.getDataNascimento());
         cv.put("endereco", pCliente.getEndereco());
         cv.put("profissao", pCliente.getProfissao());
         cv.put("RG", pCliente.getRg());
-        cv.put("nacionalidade", pCliente.getNacionalidade());
+        cv.put("nacionalidade", pCliente.getNacionalidade());*/
 
         long id = db.insert(TABELA_CLIENTE,null,cv);
         db.close();
@@ -80,11 +81,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("nome", pFuncionario.getNome());
         cv.put("CPF", pFuncionario.getCpf());
-        cv.put("data_nascimento", pFuncionario.getDataNascimento());
+/*        cv.put("data_nascimento", pFuncionario.getDataNascimento());
         cv.put("endereco", pFuncionario.getEndereco());
         cv.put("profissao", pFuncionario.getProfissao());
         cv.put("RG", pFuncionario.getRg());
-        cv.put("nacionalidade", pFuncionario.getNacionalidade());
+        cv.put("nacionalidade", pFuncionario.getNacionalidade());*/
 
         long id = db.insert(TABELA_FUNCIONARIO,null,cv);
         db.close();
@@ -96,11 +97,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("nome", pCliente.getNome());
         cv.put("CPF", pCliente.getCpf());
-        cv.put("data_nascimento", pCliente.getDataNascimento());
+/*        cv.put("data_nascimento", pCliente.getDataNascimento());
         cv.put("endereco", pCliente.getEndereco());
         cv.put("profissao", pCliente.getProfissao());
         cv.put("RG", pCliente.getRg());
-        cv.put("nacionalidade", pCliente.getNacionalidade());
+        cv.put("nacionalidade", pCliente.getNacionalidade());*/
 
         long id = db.update(TABELA_CLIENTE,cv,"_id = ?", new String[]{String.valueOf(pCliente.getId())});
         db.close();
@@ -113,11 +114,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put("nome", pFuncionario.getNome());
         cv.put("CPF", pFuncionario.getCpf());
-        cv.put("data_nascimento", pFuncionario.getDataNascimento());
+/*        cv.put("data_nascimento", pFuncionario.getDataNascimento());
         cv.put("endereco", pFuncionario.getEndereco());
         cv.put("profissao", pFuncionario.getProfissao());
         cv.put("RG", pFuncionario.getRg());
-        cv.put("nacionalidade", pFuncionario.getNacionalidade());
+        cv.put("nacionalidade", pFuncionario.getNacionalidade());*/
 
         long id = db.update(TABELA_FUNCIONARIO,cv,"_id = ?", new String[]{String.valueOf(pFuncionario.getId())});
         db.close();
@@ -146,12 +147,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void GetAllClientes(Context context, ListView lv){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"_id","nome","CPF"};
-        //"data_nascimento",
-        //"endereco",
-        //"profissao",
-        //"RG",
-        //"nacionalidade"
-        //};
         Cursor data = db.query(TABELA_CLIENTE,columns,null,null,null,null,"nome");
         int[] to = {R.id.txtIdListarPessoa,R.id.txtNomeListarPessoa,R.id.txtCpfListarPessoa};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_pessoa_item,data,columns,to,0);
@@ -162,12 +157,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void GetAllFuncionarios(Context context, ListView lv){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"_id","nome","CPF"};
-        //"data_nascimento",
-        //"endereco",
-        //"profissao",
-        //"RG",
-        //"nacionalidade"
-        //};
         Cursor data = db.query(TABELA_FUNCIONARIO,columns,null,null,null,null,"nome");
         int[] to = {R.id.txtIdListarPessoa,R.id.txtNomeListarPessoa,R.id.txtCpfListarPessoa};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_pessoa_item,data,columns,to,0);
@@ -242,7 +231,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void GetAllReservas(Context context, ListView lv){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"_id","nome_hospede","nome_colaborador","data_reserva"};
-        Cursor data = db.query(TABELA_RESERVA,columns,null,null,null,null,"nome");
+        Cursor data = db.query(TABELA_RESERVA,columns,null,null,null,null,"nome_hospede");
         int[] to = {R.id.txtIdListarReserva,R.id.txtNomeListarHospede,R.id.txtNomeListarColaborador,R.id.txtDataReserva};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_reserva_item,data,columns,to,0);
         lv.setAdapter(adapter);
@@ -253,13 +242,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"_id","nome_hospede","nome_colaborador","data_reserva"};
         String[] args = {String.valueOf(id)};
-        Cursor data = db.query(TABELA_RESERVA,columns,"_id = ?",args,null,null,"nome");
+        Cursor data = db.query(TABELA_RESERVA,columns,"_id = ?",args,null,null,"nome_hospede");
         data.moveToFirst();
         ReservaModel ReservaModel = new ReservaModel();
-        ReservaModel.setId(data.getString(0));
+        ReservaModel.setId(data.getInt(0));
         ReservaModel.setNomeColaborador(data.getString(1));
         ReservaModel.setNomeHospede(data.getString(2));
-        ReservaModel.setDatReserva(data.getString(2));
+        ReservaModel.setDatReserva(data.getString(3));
         data.close();
         db.close();
         return ReservaModel;

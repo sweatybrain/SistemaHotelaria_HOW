@@ -32,4 +32,27 @@
         android:textColorHint="#bbb"
         />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_excluir_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:text="EXCLUIR"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_salvar_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:text="SALVAR"/>
+
+    </LinearLayout>
 </LinearLayout>

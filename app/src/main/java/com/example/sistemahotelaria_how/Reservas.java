@@ -11,7 +11,6 @@ public class Reservas extends AppCompatActivity implements View.OnClickListener{
 
     private Button btnCadastrarReserva, btnConsultarReserva;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +25,8 @@ public class Reservas extends AppCompatActivity implements View.OnClickListener{
 
 
     private void InicializarComponentes(){
-        btnCadastrarReserva = findViewById(R.id.btn_AdicionarHospedes);
-        btnConsultarReserva = findViewById(R.id.btn_ConsultarHospedes);
+        btnCadastrarReserva = findViewById(R.id.btn_AdicionarReserva);
+        btnConsultarReserva = findViewById(R.id.btn_ConsultarReserva);
     }
 
     private void SetarListeners(){

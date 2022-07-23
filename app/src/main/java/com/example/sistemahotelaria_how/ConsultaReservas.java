@@ -16,6 +16,8 @@ public class ConsultaReservas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_reservas);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         DataBaseHelper dbContext = new DataBaseHelper(this);
         ListView lv = findViewById(R.id.lv_listar_reservas);
         dbContext.GetAllReservas(this,lv);

@@ -24,6 +24,7 @@
         android:textColorHint="#bbb"
         />
 
+<!--
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/txt_datNascimento_funcionario"
         android:layout_width="match_parent"
@@ -73,6 +74,7 @@
         android:layout_height="wrap_content"
         android:hint="Complemento (opcional)"
         android:textColorHint="#bbb"/>
+-->
 
     <LinearLayout
         android:layout_width="match_parent"

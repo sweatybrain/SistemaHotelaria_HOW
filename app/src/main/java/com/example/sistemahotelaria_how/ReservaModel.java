@@ -2,13 +2,13 @@ package com.example.sistemahotelaria_how;
 
 public class ReservaModel {
 
-    private String Id;
+    private int Id;
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         Id = id;
     }
 
