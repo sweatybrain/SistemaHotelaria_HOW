@@ -5,8 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class CadastroReservas extends AppCompatActivity {
+
+    private ReservaModel ReservaEdicao;
+
+    private EditText txtNomeHospede,
+            txtNomeColaborador,
+            txtDatReserva;
 
     private Button btnSalvarReserva;
 
@@ -20,39 +28,26 @@ public class CadastroReservas extends AppCompatActivity {
         InicializarComponentes();
         SetarListeners();
     }
-
     private void InicializarComponentes(){
-/*        txtNome = findViewById(R.id.txt_nome_funcionario);
-        txtCpf = findViewById(R.id.txt_cpf_funcionario);
-        txtDatNascimento = findViewById(R.id.txt_datNascimento_funcionario);
-        txtTelefone = findViewById(R.id.txt_telefone_funcionario);
-        txtNacionalidade = findViewById(R.id.txt_nacionalidade_funcionario);
-        txtLogradouro = findViewById(R.id.txt_logradouro_funcionario);
-        txtCep = findViewById(R.id.txt_cep_funcionario);
-        txtComplemento = findViewById(R.id.txt_complemento_funcionario);
-        txtNumero = findViewById(R.id.txt_numero_funcionario);*/
+        txtNomeHospede = findViewById(R.id.txt_nome_hospede_reserva);
+        txtNomeColaborador = findViewById(R.id.txt_colaborador_reserva);
+        txtDatReserva = findViewById(R.id.txt_datReserva);
 
-        /*btnSalvarReserva = findViewById(R.id.);*/
+        btnSalvarReserva = findViewById(R.id.btn_salvar_reserva);
     }
+
 
     private void SetarListeners(){
         btnSalvarReserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //salvar o obj cliente no banco
-                FuncionarioModel oFuncionario = new FuncionarioModel();
-/*                oFuncionario.setNome(txtNome.getText().toString());
-                oFuncionario.setCpf(txtCpf.getText().toString());
-                oFuncionario.setDataNascimento(txtDatNascimento.getText().toString());
-                oFuncionario.setTelefone(txtTelefone.getText().toString());
-                oFuncionario.setNacionalidade(txtNacionalidade.getText().toString());
-                oFuncionario.setEndereco(txtLogradouro.getText().toString());
-                oFuncionario.setEndereco(txtCep.getText().toString());
-                oFuncionario.setEndereco(txtComplemento.getText().toString());
-                oFuncionario.setEndereco(txtNumero.getText().toString());*/
+                ReservaModel oReserva = new ReservaModel();
+                oReserva.setNomeHospede(txtNomeHospede.getText().toString());
+                oReserva.setNomeColaborador(txtNomeColaborador.getText().toString());
+                oReserva.setNomeHospede(txtDatReserva.getText().toString());
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
-                dbContext.createFuncionario(oFuncionario);
+                dbContext.updateReserva(oReserva);
                 onSupportNavigateUp();
             }
         });

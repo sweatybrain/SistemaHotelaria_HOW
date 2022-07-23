@@ -30,6 +30,10 @@
         android:hint="Data da Reserva"
         android:textColorHint="#bbb"
         />
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_salvar_reserva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SALVAR"/>
 
 </LinearLayout>

@@ -9,14 +9,12 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button btnHospedes, btnReserva, btnAgenda, btnOperacional;
+    private Button btnHospedes, btnReserva, btnOperacional;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         inicializarComponentes();
         SetarListeners();
@@ -25,32 +23,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void inicializarComponentes(){
         btnHospedes = findViewById(R.id.btn_hospedes);
         btnOperacional = findViewById(R.id.btn_operacional);
-        btnAgenda = findViewById(R.id.btn_agendas);
         btnReserva = findViewById(R.id.btn_reservas);
     }
 
     private void SetarListeners(){
         btnHospedes.setOnClickListener(this);
         btnOperacional.setOnClickListener(this);
-        btnAgenda.setOnClickListener(this);
         btnReserva.setOnClickListener(this);
     }
 
-    //aqui a principio ta ok
     private void AbrirTelaHospedes(){
         Intent in = new Intent(this, Hospedes.class);
         startActivity(in);
     }
 
-    //aqui a principio ta ok
     private void AbrirTelaOperacional(){
         Intent in = new Intent(this, Funcionario.class);
         startActivity(in);
     }
 
-    //TO-DO: IMPLEMENTAR DAQUI PRA FRENTE
     private void AbrirTelaReservas(){
-        Intent in = new Intent(this, Hospedes.class);
+        Intent in = new Intent(this, Reservas.class);
         startActivity(in);
     }
 
@@ -69,10 +62,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
-    /*@Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
-    }*/
 }

@@ -46,17 +46,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_reservas"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="RESERVAS"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_agendas"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="AGENDAS"/>
 
     </LinearLayout>
 </LinearLayout>

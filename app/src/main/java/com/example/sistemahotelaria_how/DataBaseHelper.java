@@ -15,6 +15,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "hotelaria";
     private static final String TABELA_CLIENTE = "cliente";
     private static final String TABELA_FUNCIONARIO = "funcionario";
+    private static final String TABELA_RESERVA = "reservas";
 
 
     private static final String CREATE_TABLE_CLIENTE = "CREATE TABLE " + TABELA_CLIENTE + "(" +
@@ -39,8 +40,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             "RG VARCHAR(15), " +
             "nacionalidade VARCHAR(20)" + ")";
 
+    private static final String CREATE_TABLE_RESERVA = "CREATE TABLE " + TABELA_RESERVA + "(" +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "nome_hospede VARCHAR(50), " +
+            "nome_colaborador VARCHAR(50), " +
+            "data_reserva TEXT" + ")";
 
-    private static final String DROP_TABLE_CLIENTE = "DROP TABLE  IF EXISTS " + TABELA_CLIENTE;
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_CLIENTE);
@@ -199,13 +205,63 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return oFuncionario;
     }
 
+    public long createReserva(ReservaModel pReserva){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("nome_hospede", pReserva.getNomeHospede());
+        cv.put("nome_colaborador", pReserva.getNomeColaborador());
+        cv.put("data_reserva", pReserva.getDatReserva());
+
+        long id = db.insert(TABELA_RESERVA,null,cv);
+        db.close();
+        return id;
+    }
+
     public long deleteReserva(ReservaModel pReserva){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        long id = db.delete(TABELA_FUNCIONARIO,"_id = ?", new String[]{String.valueOf(pReserva.getId())});
+        long id = db.delete(TABELA_RESERVA,"_id = ?", new String[]{String.valueOf(pReserva.getId())});
         db.close();
 
         return id;
     }
 
+    public long updateReserva(ReservaModel pReserva){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("nome_hospede", pReserva.getNomeHospede());
+        cv.put("nome_colaborador", pReserva.getNomeColaborador());
+        cv.put("data_reserva", pReserva.getDatReserva());
+
+        long id = db.update(TABELA_RESERVA,cv,"_id = ?", new String[]{String.valueOf(pReserva.getId())});
+        db.close();
+
+        return id;
+    }
+
+    public void GetAllReservas(Context context, ListView lv){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"_id","nome_hospede","nome_colaborador","data_reserva"};
+        Cursor data = db.query(TABELA_RESERVA,columns,null,null,null,null,"nome");
+        int[] to = {R.id.txtIdListarReserva,R.id.txtNomeListarHospede,R.id.txtNomeListarColaborador,R.id.txtDataReserva};
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_reserva_item,data,columns,to,0);
+        lv.setAdapter(adapter);
+        db.close();
+    }
+
+    public ReservaModel GetByIdReserva(int id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"_id","nome_hospede","nome_colaborador","data_reserva"};
+        String[] args = {String.valueOf(id)};
+        Cursor data = db.query(TABELA_RESERVA,columns,"_id = ?",args,null,null,"nome");
+        data.moveToFirst();
+        ReservaModel ReservaModel = new ReservaModel();
+        ReservaModel.setId(data.getString(0));
+        ReservaModel.setNomeColaborador(data.getString(1));
+        ReservaModel.setNomeHospede(data.getString(2));
+        ReservaModel.setDatReserva(data.getString(2));
+        data.close();
+        db.close();
+        return ReservaModel;
+    }
 }
