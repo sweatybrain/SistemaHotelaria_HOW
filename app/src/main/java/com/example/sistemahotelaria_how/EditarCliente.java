@@ -65,9 +65,9 @@ public class EditarCliente extends AppCompatActivity {
         txtTelefone.setText(ClienteEdicao.getTelefone());
         txtNacionalidade.setText(ClienteEdicao.getNacionalidade());
         txtLogradouro.setText(ClienteEdicao.getEndereco());
-        /*txtCep.setText(ClienteEdicao.getNome());
-        txtComplemento.setText(ClienteEdicao.getNome());
-        txtNumero.setText(ClienteEdicao.getNome());*/
+        txtCep.setText(ClienteEdicao.getCep());
+        txtComplemento.setText(ClienteEdicao.getComplemento());
+        txtNumero.setText(ClienteEdicao.getNumero());
     }
 
     private void SetarListeners(){
@@ -81,6 +81,9 @@ public class EditarCliente extends AppCompatActivity {
                 oCliente.setTelefone(txtTelefone.getText().toString());
                 oCliente.setNacionalidade(txtNacionalidade.getText().toString());
                 oCliente.setEndereco(txtLogradouro.getText().toString());
+                oCliente.setEndereco(txtCep.getText().toString());
+                oCliente.setEndereco(txtComplemento.getText().toString());
+                oCliente.setEndereco(txtNumero.getText().toString());
 
                 DataBaseHelper dbContext = new DataBaseHelper(getApplicationContext());
                 dbContext.updateCliente(oCliente);

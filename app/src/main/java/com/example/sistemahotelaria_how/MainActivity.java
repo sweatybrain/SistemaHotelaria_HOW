@@ -35,19 +35,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAgenda.setOnClickListener(this);
         btnReserva.setOnClickListener(this);
     }
-    //EM ANDAMENTO
     private void AbrirTelaHospedes(){
         Intent in = new Intent(this, Hospedes.class);
         startActivity(in);
     }
-    //TO-DO: IMPLEMENTAR DAQUI PRA FRENTE
-    private void AbrirTelaAgenda(){
-        Intent in = new Intent(this, Hospedes.class);
-        startActivity(in);
-    }
-    //TO-DO: IMPLEMENTAR DAQUI PRA FRENTE
+
     private void AbrirTelaOperacional(){
-        Intent in = new Intent(this, Hospedes.class);
+        Intent in = new Intent(this, Funcionario.class);
         startActivity(in);
     }
     //TO-DO: IMPLEMENTAR DAQUI PRA FRENTE
@@ -61,9 +55,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btn_hospedes:
                 AbrirTelaHospedes();
-                break;
-            case R.id.btn_agendas:
-                AbrirTelaAgenda();
                 break;
             case R.id.btn_operacional:
                 AbrirTelaOperacional();

@@ -1,7 +1,6 @@
 package com.example.sistemahotelaria_how;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +27,7 @@ public class ConsultaCliente extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                TextView tvId = view.findViewById(R.id.txtIdListarCliente);
+                TextView tvId = view.findViewById(R.id.txtIdListarPessoa);
                 Bundle b = new Bundle();
                 b.putInt("id", Integer.parseInt(tvId.getText().toString()));
 

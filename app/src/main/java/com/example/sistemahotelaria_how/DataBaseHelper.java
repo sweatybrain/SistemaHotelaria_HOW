@@ -147,13 +147,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //"nacionalidade"
         //};
         Cursor data = db.query(TABELA_CLIENTE,columns,null,null,null,null,"nome");
-        int[] to = {R.id.txtIdListarCliente,R.id.txtNomeListarCliente,R.id.txtCpfListarCliente};
+        int[] to = {R.id.txtIdListarPessoa,R.id.txtNomeListarPessoa,R.id.txtCpfListarPessoa};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_pessoa_item,data,columns,to,0);
         lv.setAdapter(adapter);
         db.close();
     }
 
-/*    public void GetAllFuncionarios(Context context, ListView lv){
+    public void GetAllFuncionarios(Context context, ListView lv){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {"_id","nome","CPF"};
         //"data_nascimento",
@@ -163,11 +163,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //"nacionalidade"
         //};
         Cursor data = db.query(TABELA_FUNCIONARIO,columns,null,null,null,null,"nome");
-        int[] to = {R.id.textViewIdListarFuncionario,R.id.textViewNomeListarFuncionario,R.id.textViewCpfListarFuncionario};
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.funcionario_item_list,data,columns,to,0);
+        int[] to = {R.id.txtIdListarPessoa,R.id.txtNomeListarPessoa,R.id.txtCpfListarPessoa};
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(context, R.layout.consulta_pessoa_item,data,columns,to,0);
         lv.setAdapter(adapter);
         db.close();
-    }*/
+    }
 
     public ClienteModel GetByIdCliente(int id){
         SQLiteDatabase db = this.getReadableDatabase();

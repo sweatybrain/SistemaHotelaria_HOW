@@ -34,11 +34,11 @@ public class Funcionario extends AppCompatActivity implements View.OnClickListen
     }
 
     private void AbrirTelaConsultaColaborador(){
-        Intent in = new Intent(this, ConsultaCliente.class);
+        Intent in = new Intent(this, ConsultaFuncionario.class);
         startActivity(in);
     }
     private void AbrirTelaCadastraColaborador(){
-        Intent in = new Intent(this, CadastroCliente.class);
+        Intent in = new Intent(this, CadastroFuncionario.class);
         startActivity(in);
     }
 
